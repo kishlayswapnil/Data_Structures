@@ -72,4 +72,16 @@ public class LinkListUtil<T> {
 			size -= 1;
 		}
 	}
+	
+	// Search the value through the linked list and applying if statement on the traversal.
+	public boolean search(T value) {
+		Node node = head;
+		while (node.next != null) {
+			if (node.data.equals(value)) {
+				return true;
+			}
+			node = node.next;
+		}
+		return false;
+	}
 }
