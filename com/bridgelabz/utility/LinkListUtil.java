@@ -128,4 +128,17 @@ public class LinkListUtil<T> {
 		}
 		return count;
 	}
+	
+	//Item being entered on a specific position.
+	public void insert(int position, T item) {
+		Node newNode = new Node();
+		newNode.data = item;
+		newNode.next = null;
+		Node node = head;
+		for(int index = 0; index < position - 1; ++index) {
+			node = node.next;
+		}
+		newNode.next = node.next;
+		node.next = newNode;
+	}
 }
