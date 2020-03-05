@@ -84,4 +84,12 @@ public class LinkListUtil<T> {
 		}
 		return false;
 	}
+	
+	//Checks the linked list if it is empty or not.
+	public boolean isEmpty() {
+		if (head == null) {
+			return true;
+		}
+		return false;
+	}
 }
