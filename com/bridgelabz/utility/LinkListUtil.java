@@ -92,4 +92,15 @@ public class LinkListUtil<T> {
 		}
 		return false;
 	}
+	
+	//Returns the value of count.
+	public int size() {
+		Node node = head;
+		int count = 1;
+		while (node.next != null) {
+			node = node.next;
+			count++;
+		}
+		return count;
+	}
 }
