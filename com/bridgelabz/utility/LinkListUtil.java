@@ -37,4 +37,13 @@ public class LinkListUtil<T> {
 		}
 	}
 	
+	//Display the linked list by giving print line on the traversal.
+	public void display() {
+		Node node = head;
+		while (node.next != null) {
+			System.out.println(node.data);
+			node = node.next;
+		}
+		System.out.println(node.data);
+	}
 }
