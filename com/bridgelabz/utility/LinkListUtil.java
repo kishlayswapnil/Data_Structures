@@ -154,4 +154,20 @@ public class LinkListUtil<T> {
 		previous.next = null;
 		size--;
 	}
+	
+	//Removes the element based on its position.
+	public void pop(int position) {
+		if (head == null) {
+			System.out.print("no linked list found.");
+		} else {
+			Node node1 = head;
+			Node previous = null;
+			//Loop traversing upto the position value given by user.
+			for(int index = 1; index < position - 1; ++index) {
+				node1 = node1.next;
+			}
+			previous = node1.next;
+			node1.next = previous.next;
+		}
+	}
 }
