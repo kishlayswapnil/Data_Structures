@@ -116,4 +116,16 @@ public class LinkListUtil<T> {
 		newNode.next = node.next;
 		node.next = newNode;
 	}
+	
+	//This method will throw a boolean value on checking the value through the linked list.
+	public int index(T value) {
+		Node node = head;
+		int count = 0;
+		while (node.next != null) {
+			if(node.data.equals(value))
+				count++;
+			node = node.next;
+		}
+		return count;
+	}
 }
