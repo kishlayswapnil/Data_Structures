@@ -5,6 +5,7 @@ public class LinkListUtil<T> {
 	
 	//Head for the linked list been initialized.
 	Node head;
+	int size=0;
 	
 	//List has been initialized.
 	public String list() {
@@ -45,5 +46,30 @@ public class LinkListUtil<T> {
 			node = node.next;
 		}
 		System.out.println(node.data);
+	}
+	
+	//Removes the item entered over here.
+	public void remove(T item) {
+		if(head == null) {
+			System.out.print("no linked list found.");
+		} else {
+			Node node1 = head;
+			Node previous = null;
+			//Condition if their is data in head only.
+			if (head.data.equals(item)) {
+				head = head.next;
+				size -= 1;
+				return;
+			}
+			//Condition for rest of the item.
+			while (!node1.data.equals(item)) {
+				previous = node1;
+				node1 = node1.next;
+			}
+			node1 = node1.next;
+			previous.next = node1;
+			node1 = null;
+			size -= 1;
+		}
 	}
 }
