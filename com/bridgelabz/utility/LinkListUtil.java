@@ -141,4 +141,17 @@ public class LinkListUtil<T> {
 		newNode.next = node.next;
 		node.next = newNode;
 	}
+	
+	//Removes the last element of the linked list.
+	public void pop() {
+		Node node1 = head;
+		Node previous = null;
+		while (node1.next != null) {
+			previous = node1;
+			node1 = node1.next;
+		}
+		// removes the last element.
+		previous.next = null;
+		size--;
+	}
 }
