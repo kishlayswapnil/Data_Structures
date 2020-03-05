@@ -103,4 +103,17 @@ public class LinkListUtil<T> {
 		}
 		return count;
 	}
+	
+	//This method will enter the item at the end of the linked list.
+	public void append(T item) {
+		Node newNode = new Node();
+		newNode.data = item;
+		newNode.next = null;
+		Node node = head;
+		for(int index = 0; index < size()-1; ++index) {
+			node = node.next;
+		}
+		newNode.next = node.next;
+		node.next = newNode;
+	}
 }
