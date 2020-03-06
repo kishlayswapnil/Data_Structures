@@ -1,11 +1,9 @@
-package com.bridgelabz.unorderedlist;
-
 import com.bridgelabz.utility.LinkListUtil;
 
 import java.io.*;
 import java.util.Scanner;
 
-//Unordered List class with all the necessary file operations.
+//Ordered List class with all the necessary file operations.
 public class UnOrderedList<T> {
 	public static void main(String[] args) throws Exception
 	{
