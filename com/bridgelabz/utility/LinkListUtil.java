@@ -1,10 +1,11 @@
 package com.bridgelabz.utility;
 
 //A generic link list utility class.
-public class LinkListUtil<T> {
+public class LinkListUtil<T extends Comparable<T>> {
 	
 	//Head for the linked list been initialized.
 	Node head;
+	Node tail;
 	int size=0;
 	
 	//List has been initialized.
@@ -168,6 +169,35 @@ public class LinkListUtil<T> {
 			}
 			previous = node1.next;
 			node1.next = previous.next;
+		}
+	}
+	
+	//Method to add elements in ordered linked list.
+	public void addOrder(T item)
+	{
+		Node newNode= new Node();
+		newNode.data=item;
+		if (head == null) {
+			head = newNode;
+			head.next = tail;
+			tail = head;
+		} else if (item.compareTo((T) head.data) < 0) {
+			newNode.next = head;
+			head = newNode;
+		} else {
+			if (item.compareTo((T) tail.data) > 0) {
+				tail.next = newNode;
+				tail = newNode;
+				return;
+			}
+			Node node1 = head;
+			Node previous = null;
+			while (item.compareTo((T) node1.data) > 0 && node1.next != null) {
+				previous = node1;
+				node1 = node1.next;
+			}
+			previous.next = newNode;
+			newNode.next = node1;
 		}
 	}
 }
