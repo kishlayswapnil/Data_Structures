@@ -4,8 +4,10 @@ package com.bridgelabz.utility;
 public class StackOperations<T> {
 	int capacity = 10;
 	private int top = 0;
+	//Array for storing values in a stack with size same as capacity.
 	private Object[] stack = new Object[capacity];
 	
+	//Function to push the values in stack.
 	public void push(T data) {
 		// checks for capacity of array
 		if (top == capacity){
