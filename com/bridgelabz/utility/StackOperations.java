@@ -47,4 +47,9 @@ public class StackOperations<T> {
 	public T peek() {
 		return (T) stack[top];
 	}
+	
+	//returns the size of the stack.
+	public int size() {
+		return top;
+	}
 }
