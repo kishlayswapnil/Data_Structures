@@ -42,4 +42,9 @@ public class StackOperations<T> {
 	public boolean isEmpty() {
 		return top == 0;
 	}
+	
+	//Pushed in the stack without modifying it.
+	public T peek() {
+		return (T) stack[top];
+	}
 }
