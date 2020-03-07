@@ -48,7 +48,7 @@ public class StackOperations<T> {
 		return (T) stack[top];
 	}
 	
-	//returns the size of the stack.
+	//returns the size of the stack as a integer value.
 	public int size() {
 		return top;
 	}
