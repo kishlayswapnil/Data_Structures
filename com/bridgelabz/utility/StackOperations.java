@@ -20,11 +20,28 @@ public class StackOperations<T> {
 		top++;
 	}
 	
-	//Function to increase the limit of the stack if limit of the stack has reached.
+	//Method to increase the limit of the stack if limit of the stack has reached.
 	private void increaseLimit() {
 		Object[] newStack = new Object[capacity * 2];
 		System.arraycopy(stack, 0, newStack, 0, top);
 		capacity *= 2;
 		stack = newStack;
+	}
+	
+	//Method to pop out the top element has been given.
+	public T pop() {
+		if (isEmpty()) {
+			System.out.println("cannot perform pop operation on the stack it is empty.");
+			return null;
+		} else {
+			T data = (T) stack[--top];
+			stack[top] = null;
+			return data;
+		}
+	}
+	
+	//Function to check if the stack is empty or not.
+	public boolean isEmpty() {
+		return top == 0;
 	}
 }
