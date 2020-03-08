@@ -21,8 +21,8 @@ public class QueueOperations<T> {
     void increaseLimit() {
         Object[] newQueue = new Object[capacity * 2];
         capacity *= 2;
-        for (int i = front + 1; i < rear; i++) {
-            newQueue[i] = queue[i];
+        for (int index = front + 1; index < rear; index++) {
+            newQueue[index] = queue[index];
         }
         queue = newQueue;
     }
