@@ -26,4 +26,28 @@ public class QueueOperations<T> {
         }
         queue = newQueue;
     }
+
+    //Method to remove the front item from the queue.
+    void dequeue() {
+        if (size > 0) {
+            if (size < capacity / 2) {
+                decreaseLimit();
+            }
+            queue[++front] = null;
+            size--;
+        }
+    }
+
+    //Method to decrease the size of the queue.
+    void decreaseLimit() {
+        Object newQueue[] = new Object[(capacity * 3) / 4];
+        capacity = (capacity * 3) / 4;
+        int index2 = 0;
+        for (int index1 = front + 1; index1 < rear; index1++) {
+            newQueue[index2++] = queue[index1];
+        }
+        front = -1;
+        rear = size;
+        queue = newQueue;
+    }
 }
