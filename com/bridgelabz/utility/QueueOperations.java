@@ -50,4 +50,14 @@ public class QueueOperations<T> {
         rear = size;
         queue = newQueue;
     }
+    
+    //Checks the queue if it is empty.
+    boolean isEmpty() {
+        return size == 0;
+    }
+    
+    //Method to return the size of the queue.
+    int size() {
+        return size;
+    }
 }
